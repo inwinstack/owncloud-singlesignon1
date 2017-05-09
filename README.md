@@ -1,15 +1,13 @@
-# Single Sign On
+# Single Sign On1
 Place this app in **owncloud/apps/**
 
-## Publish to App Store
+## First time to config
+You must to copy cors.php/login.php in owncloud/.
+and modify config.php.
 
-First get an account for the [App Store](http://apps.owncloud.com/) then run:
 
-    make appstore_package
+## How to call cors API
+You can follow php file under corsAPI folder.
 
-The archive is located in build/artifacts/appstore and can then be uploaded to the App Store.
 
-## Running tests
-After [Installing PHPUnit](http://phpunit.de/getting-started.html) run:
 
-    phpunit -c phpunit.xml

@@ -1,6 +1,6 @@
 <?php
 if(!empty($_POST["account"]) || !empty($_POST["password"])) {
-    $redirectUrl = "https://172.20.3.18/owncloud/index.php";
+    $redirectUrl = "https://moe1.storage.edu.tw/";
     $userid = $_POST["account"];
     $password = $_POST["password"];
     $ip = $_SERVER["REMOTE_ADDR"];
@@ -71,7 +71,10 @@ if(!empty($_POST["account"]) || !empty($_POST["password"])) {
                     <div id="logo-claim" style="display:none;"></div>
                 </div>
             </header>
-                                
+                               
+            <div class="center login-text">
+                使用教育雲帳號進行登入
+            </div>
             <form method="post" name="login">
                 <fieldset>
                     <div id="message" class="hidden">
@@ -84,31 +87,42 @@ if(!empty($_POST["account"]) || !empty($_POST["password"])) {
                         <label for="user" class="infield">使用者名稱</label>
                     </p>
 
-                    <p class="groupbottom">
+                    <p class="groupmiddle">
                         <input type="password" name="password" id="password" value="" placeholder="密碼" autocomplete="on" autocapitalize="off" autocorrect="off" required="">
                         <label for="password" class="infield">密碼</label>
-                        <input type="submit" id="submit" class="login primary icon-confirm svg" title="登入" value="">
+                        <!--<input type="submit" id="submit" class="login primary icon-confirm svg" title="登入" value="">-->
                     </p>
 
-                    <div class="remember-login-container">
-                        <input type="checkbox" name="remember_login" value="1" id="remember_login" class="checkbox checkbox--white">
+                    <p class="groupbottom center">
+                        <button type="submit" id="submit" class="login-local primary" title="登入">登入</button>
+                    </p>
+
+                   <!--<div class="remember-login-container">
+                        <input type="checkbox" name="remember_login" value="1" id="remember_login" class="checkbox checkbox-white">
                         <label for="remember_login">remember</label>
-                    </div>
+                    </div>-->
                     <input type="hidden" name="timezone-offset" id="timezone-offset" value="8">
                     <input type="hidden" name="timezone" id="timezone" value="Asia/Shanghai">
                     <input type="hidden" name="requesttoken" value="aUsFDmwGEgcCbkMqFScfJC05JUgIfitlCkEGKDNg:02ITZ5TJC89dBkhrCts0b2q1fxLZY0">
                 </fieldset>
             </form>
+
+            <div>
+                <span class="login-text">---------- 其他帳號登入 ----------</span>
+                <button class="mail-edu">校園雲端電子郵件服務</button>
+            </div>
+
             <div class="push">
 		<?php if(isset($msg)) echo "<p style='color:red;'>$msg</p>"; ?>
 	    </div>
         </div>
     </div>
     <footer role="contentinfo">
-        <div class="footer-img"></div>
-        <div style="display: inline-block">
-            請使用教育體系 OpenID 帳號進行登入<br>
-            Copyright © Ministry of Education. All rigths reserved.
+        <div class="foot">
+            <span class="footer-img"></span>
+            <span class="footer-text">
+                Copyright © Ministry of Education. All rigths reserved.
+            </span>
         </div>
     </footer>
     <!--<div class="container">

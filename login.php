@@ -107,9 +107,9 @@ if(!empty($_POST["account"]) || !empty($_POST["password"])) {
                 </fieldset>
             </form>
 
-            <div>
+            <div id="other-login">
                 <span class="login-text">---------- 其他帳號登入 ----------</span>
-                <button class="mail-edu">校園雲端電子郵件服務</button>
+                <input type="button" class="mail-edu" value="校園雲端電子郵件服務" onclick="location.href='http://mail.edu.tw/edumail.html'">
             </div>
 
             <div class="push">

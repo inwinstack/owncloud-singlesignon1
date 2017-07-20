@@ -10,8 +10,9 @@ class RedirectRegion implements IRedirectRegion{
         $authInfo = AuthInfo::get();
         $authInfo["asus"] = true;
 
-        $url = $request->getServerProtocol() . "://" . $config->getValue("sso_owncloud_url")[$regions[$region]] . "?" . http_build_query($authInfo);
-
+        //$url = $request->getServerProtocol() . "://" . $config->getValue("sso_owncloud_url")[$regions[$region]] . "?" . http_build_query($authInfo);
+        $redirectUrl = $config->getValue("sso_owncloud_url")[$regions[$region]]. '/index.php';
+        $url = $request->getServerProtocol() . "://" . $redirectUrl . "?" . http_build_query($authInfo);
         return $url;
     }
 }

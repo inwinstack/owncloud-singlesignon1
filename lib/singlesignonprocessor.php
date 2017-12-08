@@ -180,6 +180,7 @@ class SingleSignOnProcessor {
         }
 
         if(!\OC_User::userExists($userInfo->getUserId())) {
+            \OC::$server->getSession()->set("LOGIN_ASUS",true);
             Util::firstLogin($userInfo, $authInfo);
             if($this->request->getHeader("ORIGIN")) {
                 return;
@@ -187,6 +188,7 @@ class SingleSignOnProcessor {
             Util::redirect($this->defaultPageUrl);
         }
         else {
+            \OC::$server->getSession()->set("LOGIN_ASUS",true);
             Util::login($userInfo, $authInfo);
         
             if($this->request->getHeader("ORIGIN")) {

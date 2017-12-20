@@ -107,14 +107,21 @@ if(!empty($_POST["account"]) || !empty($_POST["password"])) {
                 </fieldset>
             </form>
 
+            <div class="push">
+                <?php if(isset($msg)) echo "<p style='color:red;'>$msg</p>"; ?>
+            </div>
+
             <div id="other-login">
                 <span class="login-text">---------- 其他帳號登入 ----------</span>
                 <input type="button" class="mail-edu" value="校園雲端電子郵件服務" onclick="location.href='http://mail.edu.tw/edumail.html'">
             </div>
 
-            <div class="push">
-		<?php if(isset($msg)) echo "<p style='color:red;'>$msg</p>"; ?>
-	    </div>
+             <div id="other-login">
+                <span class="login-text">------------ 學習資源 ------------</span>
+                <input type="button" class="learning" value="操作學習地圖" onClick="window.open('http://u.camdemy.com/course/1618/intro')">
+                <input type="button" class="learning" value="下載服務" onClick="window.open('./system.php')">
+            </div>
+
         </div>
     </div>
     <footer role="contentinfo">
